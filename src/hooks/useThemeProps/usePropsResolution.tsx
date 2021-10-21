@@ -146,7 +146,7 @@ export function usePropsResolution(
 
   const incomingWithDefaultProps = merge(
     {},
-    componentTheme.defaultProps || {},
+    componentTheme?.defaultProps || {},
     cleanIncomingProps
   );
   // STEP 2: flatten them
@@ -183,7 +183,7 @@ export function usePropsResolution(
   let componentBaseStyle = {},
     flattenBaseStyle,
     baseSpecificityMap;
-  if (componentTheme.baseStyle) {
+  if (componentTheme?.baseStyle) {
     componentBaseStyle =
       typeof componentTheme.baseStyle !== 'function'
         ? componentTheme.baseStyle
